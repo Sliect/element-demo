@@ -1,0 +1,51 @@
+// Colors
+$color-white: #fff !default;
+$color-black: #000 !default;
+
+$color-success: #67c23a !default;
+$color-warning: #e6a23c !default;
+$color-danger: #f56c6c !default;
+$color-info: #909399 !default;
+
+$color-text-primary: #303133 !default;
+$color-text-regular: #606266 !default;
+$color-text-secondary: #909399 !default;
+$color-text-placeholder: #c0c4cc !default;
+
+$theme-color-interval: 8% !default;
+
+$theme-colors: (
+  success: $color-success,
+  warning: $color-warning,
+  error  : $color-danger,
+  info   : $color-info
+);
+
+// Border
+$border-radius: 4px !default;
+
+// Font
+$font-path: 'fonts' !default;
+
+// Alert
+$alert-padding: 8px 16px !default;
+$alert-content-padding: 0 8px !default;
+$alert-border-radius: $border-radius !default;
+$alert-bg-level: -11.25 !default;
+$alert-font-size: 13px !default;
+$alert-close-customed-font-size: 13px !default;
+
+$alert-icon-size: 16px !default;
+$alert-icon-large-size: 28px !default;
+
+$alert-description-font-size: 12px !default;
+$alert-description-margin: 5px 0 0 !default;
+
+// Header
+$header-padding: 0 20px !default;
+
+// Footer
+$footer-padding: 0 20px !default;
+
+// Main
+$main-padding: 20px !default;

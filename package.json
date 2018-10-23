@@ -1,0 +1,54 @@
+{
+  "name": "element-demo",
+  "version": "1.0.0",
+  "description": "element-demo",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.config.js",
+    "build:file": "node build/bin/iconInit.js & node build/bin/build-entry.js",
+    "build:utils": "babel src --out-dir lib --ignore src/index.js",
+    "build": "npm run clean & cross-env NODE_ENV=production node build/build.js",
+    "test": "karma start"
+  },
+  "keywords": [
+    "element"
+  ],
+  "author": "sliect",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "chalk": "^2.4.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jasmine-core": "^3.2.1",
+    "json-templater": "^1.2.0",
+    "karma": "^3.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "ora": "^3.0.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "uppercamelcase": "^3.0.0",
+    "url-loader": "^1.1.2",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  }
+}

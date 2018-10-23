@@ -1,0 +1,11 @@
+@function theme-color($key: 'info') {
+  @return map-get($theme-colors, $key);
+}
+
+@function theme-color-level($color-name: 'info', $level: 0) {
+  $color: theme-color($color-name);
+  $color-base: if($level>0, $color-black, $color-white);
+  $level: abs($level);
+
+  @return mix($color-base, $color, $theme-color-interval * $level)
+}

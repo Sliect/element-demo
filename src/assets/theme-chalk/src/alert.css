@@ -1,0 +1,40 @@
+.el-alert {
+  padding: 8px 16px;
+  margin: 0;
+  border-radius: 4px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.el-alert.is-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.el-alert-success {
+  color: #67c23a;
+}
+
+.el-alert-warning {
+  color: #e6a23c;
+}
+
+.el-alert-danger {
+  color: #f56c6c;
+}
+
+.el-alert-info {
+  color: #909399;
+}
+/*# sourceMappingURL=alert.css.map */

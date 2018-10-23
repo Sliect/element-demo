@@ -1,0 +1,20 @@
+@import './config.scss';
+@import '../common/var.scss';
+
+// 在模块名前加.el-
+@mixin b($block) {
+  $B: $namespace + '-' + $block !global;
+
+  .#{$B} {
+    @content
+  }
+}
+
+// 根元素为.el-alert, $state为center 结果.el-alert.is-center
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}

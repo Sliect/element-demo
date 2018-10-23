@@ -1,0 +1,8 @@
+{
+  "alert": "./src/components/alert/index.js",
+  "aside": "./src/components/aside/index.js",
+  "container": "./src/components/container/index.js",
+  "header": "./src/components/header/index.js",
+  "footer": "./src/components/footer/index.js",
+  "main": "./src/components/main/index.js"
+}

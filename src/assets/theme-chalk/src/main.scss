@@ -1,0 +1,8 @@
+@include b(main) {
+  display: block;
+  flex: 1;
+  flex-basis: auto;
+  overflow: auto;
+  padding: $main-padding;
+  box-sizing: border-box;
+}
