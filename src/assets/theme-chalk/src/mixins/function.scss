@@ -9,3 +9,11 @@
 
   @return mix($color-base, $color, $theme-color-interval * $level)
 }
+
+@function color-level($color, $level: 0) {
+  $color-interval: 10%;
+  $color-base: if($level>0, $color-black, $color-white);
+  $level: abs($level);
+
+  @return mix($color-base, $color, $color-interval * $level)
+}

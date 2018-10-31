@@ -4,5 +4,8 @@
   "container": "./src/components/container/index.js",
   "header": "./src/components/header/index.js",
   "footer": "./src/components/footer/index.js",
-  "main": "./src/components/main/index.js"
+  "main": "./src/components/main/index.js",
+  "row": "./src/components/row/index.js",
+  "col": "./src/components/col/index.js",
+  "button": "./src/components/button/index.js"
 }

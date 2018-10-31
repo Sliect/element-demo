@@ -1,0 +1,54 @@
+@import './common/var.css';
+@import './mixins/mixins.scss';
+@import './mixins/utils.scss';
+@import './mixins/function.scss';
+
+@include b(button) {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  color: $button-default-color;
+  -webkit-appearance: none;
+  background: $button-default-bg;
+  margin: 0;
+  border: $border-base;
+  font-weight: $button-font-weight;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  transition: .1s;
+  @include util-user-select(none);
+  @include button-size($button-padding-vertical, $button-padding-horizontal, $button-font-size, $button-border-radius);
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-primary;
+    border-color: color-level($color-primary, -7);
+    background-color: color-level($color-primary, -9)
+  }
+
+  &:active {
+    color: color-level($color-primary, $button-active-color-level);
+  }
+
+  @include m(primary) {
+    @include button-variant($button-primary-color, $button-primary-bg, $button-primary-border);
+  }
+  @include m(success) {
+    @include button-variant($button-success-color, $button-success-bg, $button-success-border);
+  }
+  @include m(warning) {
+    @include button-variant($button-warning-color, $button-warning-bg, $button-warning-border);
+  }
+  @include m(danger) {
+    @include button-variant($button-danger-color, $button-danger-bg, $button-danger-border);
+  }
+  @include m(info) {
+    @include button-variant($button-info-color, $button-info-bg, $button-info-border);
+  }
+}

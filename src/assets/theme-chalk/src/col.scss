@@ -1,0 +1,20 @@
+@import './mixins/mixins.scss';
+[class*="el-col-"] {
+  float: left;
+  box-sizing: border-box;
+}
+
+@include b(col) {
+
+  @include layout();
+
+  &-0 {
+    display: none;
+  }
+
+  @each $size in xs, sm, md, lg, xl {
+    @include res($size) {
+      @include layout($size)
+    };
+  }
+}

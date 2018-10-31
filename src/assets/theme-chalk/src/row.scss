@@ -1,0 +1,31 @@
+@import './mixins/mixins.scss';
+@import './mixins/utils.scss';
+@include b(row) {
+  position: relative;
+  box-sizing: border-box;
+  @include utils-clearfix;
+
+  @include m(flex) {
+    display: flex;
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    @each $content in center, end, space-around, space-between  {
+      $justify: if($content == 'end', flex-end, $content);
+      $mod: 'justify-' + $content;
+      @include when($mod) {
+        justify-content: $justify;
+      }
+    }
+
+    @include when(align-middle) {
+      align-items: center;
+    }
+
+    @include when(align-bottom) {
+      align-items: flex-end;
+    }
+  }
+}
