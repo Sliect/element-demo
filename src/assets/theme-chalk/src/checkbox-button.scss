@@ -1,0 +1,113 @@
+@include b(checkbox-button) {
+  position: relative;
+  display: inline-block;
+
+  @include e(inner) {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    font-weight: $checkbox-font-weight;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background: $button-default-bg;
+    border: $border-base;
+    border-left: 0;
+    color: $button-default-color;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: $all-transition;
+    @include utils-user-select(none);
+
+    @include button-size($button-padding-vertical, $button-padding-horizontal, $button-font-size, 0);
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    & [class*="el-icon-"] {
+      line-height: 0.9;
+
+      & + span {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  @include e(original) {
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    margin: 0;
+    z-index: -1;
+  }
+
+  &.is-checked {
+    & .el-checkbox-button__inner {
+      color: $checkbox-button-checked-color;
+      background-color: $checkbox-button-checked-fill;
+      border-color: $checkbox-button-checked-border-color;
+      box-shadow: -1px 0 0 0 color-level($color-primary, -4);
+    }
+
+    &:first-child .el-checkbox-button__inner {
+      border-left-color: $checkbox-button-checked-border-color;
+    }
+  }
+
+  &.is-disabled {
+    & .el-checkbox-button__inner {
+      color: $button-disabled-color;
+      cursor: not-allowed;
+      background-image: none;
+      background-color: $button-disabled-fill;
+      border-color: $button-disabled-border;
+      box-shadow: none;
+    }
+
+    &:first-child .el-checkbox-button__inner {
+      border-left-color: $button-disabled-border;
+    }
+  }
+
+  &:first-child {
+    .el-checkbox-button__inner {
+      border-left: $border-base;
+      border-radius: $border-radius-base 0 0 $border-radius-base;
+      box-shadow: none !important;
+    }
+  }
+
+  &.is-focus {
+    & .el-checkbox-button__inner {
+      border-color: $checkbox-button-checked-border-color;
+    }
+  }
+
+  &:last-child {
+    .el-checkbox-button__inner {
+      border-radius: 0 $border-radius-base $border-radius-base 0;
+    }
+  }
+
+  @include m(medium) {
+    .el-checkbox-button__inner {
+      @include button-size($button-medium-padding-vertical, $button-medium-padding-horizontal, $button-medium-font-size, 0);
+    }
+  }
+
+  @include m(small) {
+    .el-checkbox-button__inner {
+      @include button-size($button-small-padding-vertical, $button-small-padding-horizontal, $button-small-font-size, 0);
+    }
+  }
+
+  @include m(mini) {
+    .el-checkbox-button__inner {
+      @include button-size($button-mini-padding-vertical, $button-mini-padding-horizontal, $button-mini-font-size, 0);
+    }
+  }
+}

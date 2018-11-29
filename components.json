@@ -7,5 +7,12 @@
   "main": "./src/components/main/index.js",
   "row": "./src/components/row/index.js",
   "col": "./src/components/col/index.js",
-  "button": "./src/components/button/index.js"
+  "button-group": "./src/components/button/index.js",
+  "button": "./src/components/button/index.js",
+  "radio": "./src/components/radio/index.js",
+  "radio-button": "./src/components/radio-button/index.js",
+  "radio-group": "./src/components/radio-group/index.js",
+  "checkbox": "./src/components/checkbox/index.js",
+  "checkbox-button": "./src/components/checkbox-button/index.js",
+  "checkbox-group": "./src/components/checkbox-group/index.js"
 }

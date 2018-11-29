@@ -15,9 +15,15 @@ rimraf('./test.txt', function (err) { // 删除当前目录下的 test.txt
 
 uppercamelcase 转驼峰格式
 
+在vue-loader中的options设置如下, 可以达到将.vue文件中的inline-block之间的空格去掉的效果
+compilerOptions: {
+  preserveWhitespace: false
+}
+
 ```
 
 ### 注意事项
 ```
 components.json 必须与组件一一对应
+npm run build:new [param: 组件名] 新建一个组件, 自动化相应的格式
 ```

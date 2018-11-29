@@ -10,6 +10,14 @@
   }
 }
 
+@mixin e($element) {
+  @at-root {
+    &__#{$element} {
+      @content;
+    }
+  }
+}
+
 // 在模块后加--$modifier
 @mixin m($modifier) {
   $currentSelector: #{& + $modifier-separator + $modifier};
@@ -93,5 +101,63 @@
     background-color: color-level($bg-color, $button-active-color-level);
     border-color: color-level($border-color, $button-active-color-level);
     outline: none;
+  }
+
+  @include when(plain) {
+    color: $bg-color;
+    background-color: color-level($bg-color, -9);
+    border-color: color-level($bg-color, -6);
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+      background-color: $bg-color;
+      border-color: $bg-color;
+    }
+
+    &:active {
+      color: $color-white;
+      background-color: color-level($bg-color, $button-active-color-level);
+      border-color: color-level($bg-color, $button-active-color-level);
+    }
+
+    @include when(disabled) {
+       &,
+       &:hover,
+       &:focus,
+       &:active {
+        color: color-level($bg-color, -4);
+        background-color: color-level($bg-color, -9);
+        border-color: color-level($bg-color, -8);
+       }
+    }
+  }
+
+  @include when(disabled) {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-white;
+      background-color: color-level($bg-color, -5);
+      border-color: color-level($border-color, -5);
+    }
+  }
+}
+
+// transition 激活状态
+@mixin transition-active() {
+
+  &-enter-active,
+  &-leave-active {
+    @content;
+  }
+}
+// transition 结束状态
+@mixin transition-end() {
+
+  &-leave-to,
+  &-enter {
+    @content;
   }
 }

@@ -305,3 +305,23 @@
 .el-icon-loading:before {
   content: "\e61e";
 }
+
+.el-icon--left {
+  margin-right: 5px;
+}
+.el-icon--right {
+  margin-left: 5px;
+}
+
+.el-icon-loading {
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

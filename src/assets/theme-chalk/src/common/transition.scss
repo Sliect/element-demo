@@ -1,0 +1,67 @@
+@include b(fade-in) {
+  &-enter-active,
+  &-leave-active {
+    transition: $fade-transition;
+  }
+
+  &-leave-to,
+  &-enter {
+    opacity: 0;
+  }
+}
+
+@include b(fade-in-linear) {
+  &-enter-active,
+  &-leave-active {
+    transition: $fade-linear-transition;
+  }
+
+  &-leave-to,
+  &-enter {
+    opacity: 0;
+  }
+}
+
+@include b(zoom-in-horizontal-center) {
+  @include transition-active() {
+    transition: all .3s cubic-bezier(.55, 0, .1, 1);
+  }
+  @include transition-end() {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+@include b(zoom-in-vertical-center) {
+  @include transition-active() {
+    transition: all .3s cubic-bezier(.55, 0, .1, 1);
+  }
+  @include transition-end() {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@include b(zoom-in-top) {
+  @include transition-active() {
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: center top;
+  }
+  @include transition-end() {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@include b(zoom-in-bottom) {
+  @include transition-active() {
+    transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: center bottom;
+  }
+  @include transition-end() {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}

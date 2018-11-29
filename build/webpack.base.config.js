@@ -40,14 +40,19 @@ module.exports = {
       ]
     }, {
       test: /\.scss$/,
-      use: isDev ? [
+      use: isDev ? [{
+          loader: 'style-loader'
+        },
+        {
+          loader: 'css-loader'
+        },
+        {
+          loader: 'sass-loader'
+        }
+      ] : [
         MiniCssExtractPlugin.loader,
         "css-loader",
         'sass-loader'
-      ] : [
-        { loader: 'style-loader' },
-        { loader: 'css-loader' },
-        { loader: 'sass-loader' }
       ]
     }, {
       test: /\.vue$/,
@@ -55,6 +60,9 @@ module.exports = {
       options: {
         loaders: {
           js: 'babel-loader'
+        },
+        compilerOptions: {
+          preserveWhitespace: false
         }
       }
     }, {
@@ -81,7 +89,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "css/[name].[hash].css",
-    })
+    }),
   ],
 
   optimization: {

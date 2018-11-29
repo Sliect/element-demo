@@ -9,7 +9,8 @@
     "build:file": "node build/bin/iconInit.js & node build/bin/build-entry.js",
     "build:utils": "babel src --out-dir lib --ignore src/index.js",
     "build": "npm run clean & cross-env NODE_ENV=production node build/build.js",
-    "test": "karma start"
+    "test": "karma start",
+    "build:": "node build/bin/new.js"
   },
   "keywords": [
     "element"

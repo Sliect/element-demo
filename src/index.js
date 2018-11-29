@@ -8,7 +8,14 @@ import Footer from './components/footer'
 import Main from './components/main'
 import Row from './components/row'
 import Col from './components/col'
+import ButtonGroup from './components/button-group'
 import Button from './components/button'
+import Radio from './components/radio'
+import RadioButton from './components/radio-button'
+import RadioGroup from './components/radio-group'
+import Checkbox from './components/checkbox'
+import CheckboxButton from './components/checkbox-button'
+import CheckboxGroup from './components/checkbox-group'
 
 const components = [
   Alert,
@@ -19,13 +26,25 @@ const components = [
   Main,
   Row,
   Col,
+  ButtonGroup,
   Button,
+  Radio,
+  RadioButton,
+  RadioGroup,
+  Checkbox,
+  CheckboxButton,
+  CheckboxGroup,
 ]
 
 const install = function(Vue, opts = {}) {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
+
+  Vue.prototype.$ELEMENT = {
+    size: opts.size || '',
+    zIndex: opts.zIndex || 2000
+  }
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -43,5 +62,12 @@ export default {
   Main,
   Row,
   Col,
-  Button
+  ButtonGroup,
+  Button,
+  Radio,
+  RadioButton,
+  RadioGroup,
+  Checkbox,
+  CheckboxButton,
+  CheckboxGroup
 }

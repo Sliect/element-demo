@@ -5,6 +5,7 @@
 @import './reset.scss';
 
 @import './icon.scss';
+@import 'common/transition.scss';
 @import './alert.scss';
 @import './container.scss';
 @import './header.scss';
@@ -14,3 +15,9 @@
 @import './row.scss';
 @import './col.scss';
 @import './button.scss';
+@import './radio.scss';
+@import './radio-button.scss';
+@import './radio-group.scss';
+@import './checkbox.scss';
+@import './checkbox-button.scss';
+@import './checkbox-group.scss';
